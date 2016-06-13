@@ -1,5 +1,9 @@
 # nano-fs-05
 
+```
+ssh -i ~/.ssh/udacity_key.rsa -p 2200 root@52.39.44.26 
+```
+
 _The following steps were run after having logged into the virtual machine._
 
 1. Update all currently installed packages.
@@ -14,10 +18,22 @@ _The following steps were run after having logged into the virtual machine._
   ```
   sudo dpkg-reconfigure tzdata
   ```
+  
+  Then follow the menu options to select UTC.
 
 3. Change the SSH port from 22 to 2200
   
+  ```
+  nano /etc/ssh/sshd_config
+  ```
   
+  Then change the port number from 22 to 2200 in the file.
+  
+  Save the file and exit nano.
+  
+  ```
+  service ssh restart
+  ```
   
 4. Configure the Uncomplicated Firewall (UFW) to only allow incoming connections for SSH (port 2200), HTTP (port 80), and NTP (port 123)
   
