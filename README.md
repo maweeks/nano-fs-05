@@ -153,16 +153,6 @@ _The following steps were run after having logged into the virtual machine._
   application.secret_key = 'Add your secret key'
   ```
   
-10. 
-  a. Do not allow remote connections
-    
-    
-    
-  b. Create a new user named catalog that has limited permissions to your catalog application database
-    
-  
-
-
 #### Resources used:
 
 Stack overflow
