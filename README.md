@@ -11,7 +11,9 @@ _The following steps were run after having logged into the virtual machine._
 
 2. Configure the local timezone to UTC.
 
-  asdf
+  ```
+  sudo dpkg-reconfigure tzdata
+  ```
 
 3. Change the SSH port from 22 to 2200
   
