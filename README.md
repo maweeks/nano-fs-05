@@ -37,7 +37,14 @@ _The following steps were run after having logged into the virtual machine._
   
 4. Configure the Uncomplicated Firewall (UFW) to only allow incoming connections for SSH (port 2200), HTTP (port 80), and NTP (port 123)
   
-  
+  ```
+  sudo ufw default deny incoming
+  sudo ufw default allow outgoing
+  sudo ufw allow 2200/tcp
+  sudo ufw allow ntp
+  sudo ufw allow www
+  sudo ufw enable
+  ```
   
 5. Install and configure Apache to serve a Python mod_wsgi application
   
