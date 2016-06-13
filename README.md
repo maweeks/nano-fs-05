@@ -6,14 +6,35 @@ ssh -i ~/.ssh/udacity_key.rsa -p 2200 root@52.39.44.26
 
 _The following steps were run after having logged into the virtual machine._
 
-1. Update all currently installed packages.
+1. Create a new user named grader
+
+	```
+	sudo adduser grader
+  ```
+
+2. Give the grader the permission to sudo
+
+  ```
+	sudo nano /etc/sudoers.d/grader
+	```
+	
+	Add the following:
+	
+	```
+	grader ALL=(ALL) NOPASSWD:ALL
+	```
+	
+	Save and exit.
+
+
+3. Update all currently installed packages.
 
   ```
   sudo apt-get update
   sudo apt-get upgrade
   ```
 
-2. Configure the local timezone to UTC.
+4. Configure the local timezone to UTC.
 
   ```
   sudo dpkg-reconfigure tzdata
@@ -21,7 +42,7 @@ _The following steps were run after having logged into the virtual machine._
   
   Then follow the menu options to select UTC.
 
-3. Change the SSH port from 22 to 2200
+5. Change the SSH port from 22 to 2200
   
   ```
   nano /etc/ssh/sshd_config
@@ -35,7 +56,7 @@ _The following steps were run after having logged into the virtual machine._
   service ssh restart
   ```
   
-4. Configure the Uncomplicated Firewall (UFW) to only allow incoming connections for SSH (port 2200), HTTP (port 80), and NTP (port 123)
+6. Configure the Uncomplicated Firewall (UFW) to only allow incoming connections for SSH (port 2200), HTTP (port 80), and NTP (port 123)
   
   ```
   sudo ufw default deny incoming
@@ -46,11 +67,11 @@ _The following steps were run after having logged into the virtual machine._
   sudo ufw enable
   ```
   
-5. Install and configure Apache to serve a Python mod_wsgi application
+7. Install and configure Apache to serve a Python mod_wsgi application
   
   
   
-6. Install and configure PostgreSQL
+8. Install and configure PostgreSQL
   
   a. Do not allow remote connections
     
@@ -61,6 +82,6 @@ _The following steps were run after having logged into the virtual machine._
     
     
 
-7. Install git, clone and set up your Catalog App project (from your GitHub repository from earlier in the Nanodegree program) so that it functions correctly when visiting your server’s IP address in a browser. Remember to set this up appropriately so that your .git directory is not publicly accessible via a browser!
+9. Install git, clone and set up your Catalog App project (from your GitHub repository from earlier in the Nanodegree program) so that it functions correctly when visiting your server’s IP address in a browser. Remember to set this up appropriately so that your .git directory is not publicly accessible via a browser!
 
   
