@@ -1,5 +1,14 @@
 # nano-fs-05
 
+#### VM details:
+
+AWS link: http://ec2-52-39-44-26.us-west-2.compute.amazonaws.com/
+
+IP address: 52.39.44.26
+
+SSH port: 2200
+
+#### Commands:
 ```
 ssh -i ~/.ssh/udacity_key.rsa -p 2200 root@52.39.44.26 
 ```
@@ -152,3 +161,8 @@ _The following steps were run after having logged into the virtual machine._
   b. Create a new user named catalog that has limited permissions to your catalog application database
     
   
+
+
+#### Resources used:
+
+Stack overflow
