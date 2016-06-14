@@ -8,6 +8,47 @@ IP address: 52.39.44.26
 
 SSH port: 2200
 
+
+#### Commands since last review:
+
+1. Set password for grader
+
+  ```
+  su grader
+  passwd
+  ```
+
+  set new password to the following string
+
+  ```
+  qw345!
+  ```
+  
+  and set one for root too
+  
+  ```
+  myAw3somepassword
+  ```
+  
+2. Make sudo ask for password for grader
+
+  ```
+  sudo nano /etc/sudoers.d/grader
+  ```
+
+  add the following to the file and then save it.
+
+  ```
+  grader ALL=(ALL) ALL
+  ```
+  
+3. Give grader remote access
+  
+  
+  
+  
+  
+
 #### Commands:
 ```
 ssh -i ~/.ssh/udacity_key.rsa -p 2200 root@52.39.44.26 
@@ -152,7 +193,7 @@ _The following steps were run after having logged into the virtual machine._
   from catalog import app as application
   application.secret_key = 'Add your secret key'
   ```
-  
+
 #### Resources used:
 
 Stack overflow
