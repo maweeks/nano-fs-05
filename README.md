@@ -44,14 +44,45 @@ SSH port: 2200
   
 3. Give grader remote access
   
+  ```
+  cp /root/.ssh/authorized_keys /home/grader/.ssh
   
+  sudo nano /etc/ssh/sshd_config
+  ```
   
+  Add the following to the bottom and then save the file.
   
+  ```
+  AllowUsers grader
+  ```
   
+  Then restart ssh
+  
+  ```
+  service ssh restart
+  ```
+  
+4. Disable remote root access
+  
+  ```
+  sudo nano /etc/ssh/sshd_config
+  ```
+  
+  Modify the line with PermitRootLogin on.
+  
+  ```
+  PermitRootLogin no
+  ```
+  
+  Then restart ssh
+  
+  ```
+  service ssh restart
+  ```
 
 #### Commands:
 ```
-ssh -i ~/.ssh/udacity_key.rsa -p 2200 root@52.39.44.26 
+ssh -i ~/.ssh/udacity_key.rsa -p 2200 grader@52.39.44.26 
 ```
 
 _The following steps were run after having logged into the virtual machine._
